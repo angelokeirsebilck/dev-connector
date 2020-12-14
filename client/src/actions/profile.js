@@ -29,19 +29,20 @@ export const createProfile = (formData, history, edit = false) => async (dispatc
         'Content-Type': 'application/json',
       },
     };
-
+    console.log('edit test');
     const res = await axios.post('/api/profile', formData, config);
-
+    console.log('edit');
     dispatch({
       type: GET_PROFILE,
       payload: res.data,
     });
 
-    dispatch(setAlert(edit ? 'Profile updated.' : 'Profile created.', 'succes'));
+    dispatch(setAlert(edit ? 'Profile updated.' : 'Profile created.', 'success'));
     if (!edit) {
       history.push('/dashboard');
     }
   } catch (error) {
+    console.log(error);
     const errors = error.response.data.errors;
     if (errors) {
       errors.forEach((error) => {
