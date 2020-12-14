@@ -7,7 +7,6 @@ import {
   LOGIN_SUCCES,
   LOGOUT,
   CLEAR_PROFILE,
-  ACCOUNT_DELETED,
 } from './types';
 import { setAlert } from './alert';
 import setAuthToken from '../utils/setAuthToken';
